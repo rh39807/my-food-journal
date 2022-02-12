@@ -1,0 +1,140 @@
+{
+    "1" : {
+        "id": "1",
+        "displayName": "Marybeth",
+        "username": "marybeth",
+        "budget": {
+            "calories": {
+                "day": {
+                    "interval": "day",
+                    "limit":2100
+                },
+                "week": {
+                    "interval": "week",
+                    "limit":14700
+                }
+            }
+            ,
+            "price": {
+                "month": {
+                    "interval": "month",
+                    "limit":1000
+                }
+            }
+        },
+        "roles": {
+            "powerUser": true
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcnkiLCJpYXQiOjE2NDMxMzczNDF9.AoK1vzEys-YwqhwuFQSGqyjUzBPdD_DLJ4RPEYTbfPU"
+    },
+    "2": {
+        "id": "2",
+        "displayName": "Randall",
+        "username": "rh39807",
+        "budget": {
+            "calories": {
+                "day": {
+                    "interval": "day",
+                    "limit":2100
+                },
+                "week": {
+                    "interval": "week",
+                    "limit":14700
+                }
+            }
+            ,
+            "price": {
+                "month": {
+                    "interval": "month",
+                    "limit":1000
+                }
+            }
+        },
+        "roles": {
+            "admin": true
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJoMzk4MDciLCJpYXQiOjE2NDMxMzgxNjd9.wyUriM8GXP6NGttNmD7Mlwj5KxHpRReK0WoNKtCTEUU"
+    },
+    "3": {
+        "id": "3",
+        "displayName": "Marta",
+        "username": "marta",
+        "budget": {
+            "calories": {
+                "day": {
+                    "interval": "day",
+                    "limit":2500
+                },
+                "week": {
+                    "interval": "week",
+                    "limit":14700
+                }
+            }
+            ,
+            "price": {
+                "month": {
+                    "interval": "month",
+                    "limit":1000
+                }
+            }
+        },
+        "roles": {
+            "powerUser": false
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hcnRhIiwiaWF0IjoxNjQzMTM3NjM1fQ.mFJe5RY55psFRhKh-NqeQukFOZcFYWbhTW37ZVkx-Qc"
+    },
+    "4": {
+        "id": "4",
+        "displayName": "Jakub",
+        "username": "jakub",
+        "budget": {
+            "calories": {
+                "day": {
+                    "interval": "day",
+                    "limit":2100
+                },
+                "week": {
+                    "interval": "week",
+                    "limit":14700
+                }
+            }
+            ,
+            "price": {
+                "month": {
+                    "interval": "month",
+                    "limit":1000
+                }
+            }
+        },
+        "roles": {},
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impha3ViIiwiaWF0IjoxNjQzMTM3NjgyfQ.wfRdRA_rRhMz3uM-QFs5E8Bu7gZMPNJVQR8RXmaLl4g"
+    },
+    "5": {
+        "id": "5",
+        "displayName": "Bartosz",
+        "username": "bartosz",
+        "budget": {
+            "calories": {
+                "day": {
+                    "interval": "day",
+                    "limit":2100
+                },
+                "week": {
+                    "interval": "week",
+                    "limit":14700
+                }
+            }
+            ,
+            "price": {
+                "month": {
+                    "interval": "month",
+                    "limit":1000
+                }
+            }
+        },
+        "roles": {
+            "admin": true
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJhcnRvc3oiLCJpYXQiOjE2NDMxMzc4ODZ9.2YVkXnUMaKMuaTV4H3PKLLF3V9WgZkg2zvI_xM5Bdh8"
+    }
+}
