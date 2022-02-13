@@ -1,5 +1,7 @@
 import React from 'react';
 import { LogoContainer } from './header.style';
+import { auth } from '../../firebase/firebase.utils';
+import CurrentUserContext from '../../contexts/current-user/current-user.context';
 import FoodBankTwoToneIcon from '@mui/icons-material/FoodBankTwoTone';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -23,13 +25,16 @@ export default function Header(props) {
     return () => clearInterval(clockInterval);
   }, [ setDateTime ])
 
+  const currentUser = React.useContext(CurrentUserContext);
+
   return (
     <Box sx={{ flexGrow: 1}}>
         <AppBar position="static">
           <Toolbar>
             <LogoContainer><FoodBankTwoToneIcon fontSize='inherit'/></LogoContainer>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-              My Food Journal {props.currentUser?.roles?.admin ? `- ${props.currentUser.displayName}'s Admin Page` : ''}
+              My Food Journal {currentUser?.roles?.admin ? `- ${currentUser.displayName}'s Admin Page` : ''}
+              {currentUser?.displayName && <Chip color='info' sx={{marginLeft: '10px'}} onClick={() => auth.signOut()} label='SIGN OUT'/>}
             </Typography>
             <Chip key='dateTime' label={dateTime} color='primary' variant='filled' sx={{fontWeight:700}}/>
           </Toolbar>
