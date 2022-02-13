@@ -2,30 +2,32 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressJWT = require('express-jwt');
+const path = require('path');
 const dbUtils = require('./db-utils');
 const utils = require('./utils');
 const cors = require('cors');
 const app = express();
+const port = process.env.PORT || 9000;
 
-
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization,Access-Control-Allow-Origin,Access-Control-Allow-Methods');
-//     res.setHeader('Access-Control-Allow-Origin','*');
-//     res.setHeader('Access-Control-Allow-Methods','GET, OPTIONS, POST, PUT, DELETE');
-//     next();
-// });
-
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors())
 app.use(
     expressJWT({
-      secret: 'super secret',
+      secret: process.env.TOKEN_SECRET,
       algorithms: ['HS256']
     })
     .unless({ path: ['/generateToken'] })
 );
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.get('*', function(req,res) {
+        res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    })
+}
 
 app.get("/userList", (req,res)=> {
     const user = utils.getUser(req);
@@ -125,8 +127,9 @@ app.get("/generateToken", (req,res)=>{
     }
 })
 
-app.listen(9000, ()=> {
-    console.log('Server running on port 9000');
+app.listen(port, (error)=> {
+    if (error) throw error;
+    console.log(`Server running on port ${port}`);
 })
 
 

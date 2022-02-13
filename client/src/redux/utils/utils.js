@@ -6,7 +6,6 @@ export const doFetch = (props)=> {
         const { start, success, failure, startReFetch, url, method, data, user } = props; 
         dispatch(start());
         const { token } = user;
-        const fullUrl = `http://${ AppConstants.API_SERVER }${url}`;
         const options = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -15,7 +14,7 @@ export const doFetch = (props)=> {
             method: method,
             body: data ? JSON.stringify(data) : null
         }
-        fetch(fullUrl, options)
+        fetch(url, options)
         .then((response) => {
             checkError(response);
             return response.json();
